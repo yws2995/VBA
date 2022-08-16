@@ -1,0 +1,14 @@
+Private Sub Workbook_NewSheet(ByVal Sh As Object)
+  On Error Resume Next
+  ActiveWondow.DisplayGridlines = False
+  Columns("A:A").ColumnWidth = 1
+  ActiveWindow.Zoom = 85
+  
+ <!-- 워크시트 일때만 처리하도록 IF 문을 이용
+ If Sh.Type = xlWorkSheet Then
+  ActiveWondow.DisplayGridlines = False
+  Columns("A:A").ColumnWidth = 1
+  ActiveWindow.Zoom = 85
+ End if
+ -->
+ End Sub
