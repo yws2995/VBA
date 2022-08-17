@@ -1,0 +1,36 @@
+Sub sbSelectCase_Ex1()
+  Dim Age As Integer, Level As String
+  
+  Age = InputBox("나이?")
+  Select Case Age
+    Case Is >= 65
+        Level = "노년층"
+    Case Is >= 30:     Level = "중장년층"
+    Case Is >= 16:      Level = "청년층"
+    Case Is >= 0:    Level = "아동청소년층"
+    Case Else
+      Level = "나이 입력 오류!"
+  End Select
+  MsgBox Age & vbTab & Level
+End Sub
+
+
+Sub sbSelectCase_Ex2()
+  Dim Qty As Integer, DC As Double
+  
+  Qty = InputBox("구매 수량?")
+  Select Case Qty
+    Case 0
+        DC = 0
+    Case 7, 17, 27
+        DC = 0.2
+    Case 1 To 30
+        DC = 0.1
+    Case Is >= 30
+        DC = 0.3
+    Case Else
+        MsgBox "수량 오류!"
+  End Select
+  MsgBox "할인율 : " & DC
+End Sub
+
