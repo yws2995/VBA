@@ -1,0 +1,23 @@
+Sub sbInputBoxEx1()
+  Dim Name_K As String
+  Dim Sungjuk As Integer
+  Name_K = InputBox("이름은?")
+  Sungjuk = InputBox("성적을 입력하세요.", "성적", 0)
+  MsgBox Name_K & "님의 성적 : " & Sungjuk
+End Sub
+
+
+Sub sbInputBoxEx2()
+  Dim rngT As Range
+  Dim Sungjuk As Integer
+  
+On Error Resume Next
+  Set rngT = Application.InputBox("작업 범위를 지정하세요!", _
+           "범위", Selection.Address, Type:=8)
+  If rngT Is Nothing Then
+    MsgBox "범위를 지정하지 않아 작업을 중단합니다."
+    Exit Sub
+  End If
+  Sungjuk = Application.InputBox("성적을 입력하세요.", "성적", 100, Type:=1)
+  rngT.Value = Sungjuk
+End Sub
