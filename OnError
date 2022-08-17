@@ -1,0 +1,33 @@
+<!--오류 처리하기-->
+Sub Err_Object_Ex1()
+  Dim i
+  
+  On Error Resume Next
+  i = 10 / 0
+  MsgBox Err.Number & vbCrLf & Err.Description & vbCrLf & Err.Source
+  
+  Err.Raise 513, "MyError", "암호 입력 오류입니다."
+  MsgBox Err.Number & vbCrLf & Err.Description & vbCrLf & Err.Source
+  
+  Err.Clear
+  MsgBox Err.Number & vbCrLf & Err.Description & vbCrLf & Err.Source
+End Sub
+
+
+Sub OnError_Ex2()
+  Dim rngT As Range
+  
+On Error GoTo End_rtn
+  Set rngT = Application.InputBox("작업 범위를 지정해 주세요.", Type:=8)
+  rngT.Value = "엑셀"
+  
+End_rtn:
+  If Err.Number = 0 Then
+    MsgBox "작업이 정상처리되었습니다", vbInformation
+  Else
+    MsgBox "다음과 같은 이유로 비정상처리되었습니다." & _
+        vbCrLf & Err.Description, vbCritical
+  End If
+End Sub
+
+
