@@ -33,6 +33,15 @@ Dim MyPic as Image
 MyName = "이름"
 Set MyPic = Sheet(1).Image(1)
 ```
+#### 상수 ( Const + As 데이터형 )   
+- 변수와 상수의 차이 : 변수는 값이 변경 가능한 메모리 할당공간이고, 상수는 값이 변경되지 않는 메모리 할당공간이다. 
+
+#### 대화상자 ( MsgBox, Inputbox, Application.Inpiutbox )   
+- MsgBox 메세지내용[.단추 종류 + 아이콘 종류 + 기본 단추의 위치, 제목]     
+
+- MsgBox( 메세지내용[.단추 종류 + 아이콘 종류 + 기본 단추의 위치, 제목]  )   
+=> - MsgBox의 반환 단추를 확인하기 위해 괄호로 감싸서 표현   
+
 
 
 
