@@ -42,7 +42,10 @@ Set MyPic = Sheet(1).Image(1)
 - MsgBox( 메세지내용[.단추 종류 + 아이콘 종류 + 기본 단추의 위치, 제목]  )   
 => - MsgBox의 반환 단추를 확인하기 위해 괄호로 감싸서 표현   
 
-
+#### 오류 처리하기
+1. On Error GoTo 레이블명
+2. On Error Resume Next
+3. On Error GoTo 0
 
 
 
