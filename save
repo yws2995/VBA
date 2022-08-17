@@ -1,0 +1,16 @@
+    MsgBox ActiveWorkbook.Path
+    ActiveWorkbook.SaveAs Filename:=ActiveWorkbook.Path & "\SaveTest.xlsm" _
+                , FileFormat:=xlOpenXMLWorkbookMacroEnabled
+    
+    ActiveWorkbook.Save
+    
+    ActiveWorkbook.SaveAs Filename:=ActiveWorkbook.Path & "\SaveTest.xls" _
+                , FileFormat:=xlExcel8
+                
+   ' 현재 문서 저장위치에 현재시간으로 저장
+Sub sbSaveAsTime()
+    ActiveWorkbook.SaveAs Filename:= _
+        ThisWorkbook.Path & "\" & Format(Now(), "yymmdd hhnnss") & ".xlsm", FileFormat:= _
+        xlOpenXMLWorkbookMacroEnabled, CreateBackup:=False
+    MsgBox "저장완료"
+End Sub             
