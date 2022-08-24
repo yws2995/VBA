@@ -47,5 +47,28 @@ Set MyPic = Sheet(1).Image(1)
 2. On Error Resume Next
 3. On Error GoTo 0
 
+#### For문
 
+For 카운터변수 = 시작수 To 끝수[Step 증감값]
+'실행할 내용들1
+[Exit For]
+'실행할 내용들 2
+Next [카운터변수]
+- step 증감값을 생략하면 step1로 지정
+- 카운터 변수는 생략 가능
 
+#### For Each문 (개체를 처리할 때는 For 문보다 효과적이다)
+Dim 개체변수 as 개체형
+For Each 개체변수 in 컬렉션개체
+  '실행할 내용들1
+  [Exit For]
+  '실행할 내용들2
+ Next [개체변수]
+ 
+ #### 사용자 정의 폼 UserForm
+ 폼을 화면에 표시하는 방법은 모달과 모덜리스
+ - 폼 표시
+ - - 폼개체명.Show
+ - 폼 닫기
+ - - UNload 폼개체명
+ 
